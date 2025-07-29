@@ -20,6 +20,9 @@ spec:
         envFrom:
           - secretRef:
               name: wordpress-secret
+        volumeMounts:
+        - name: wp-data-storage
+          mountPath: /var/www/html
       volumes:
       - name: wp-data-storage
         persistentVolumeClaim:
