@@ -3,8 +3,11 @@ kind: Service
 metadata:
   name: wordpress
 spec:
-  type: LoadBalancer
-  ports:
-  - port: 8080 
+  type: ClusterIP
   selector:
     app: wordpress
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 80
+

@@ -14,13 +14,12 @@ spec:
     spec:
       containers:
       - name: mariadb
-        image: mariadb:11.8.2
+        image: mariadb:11.8.1-ubi9-rc 
         ports:
         - containerPort: 3306
         envFrom:
           - secretRef:
-              name: wordpress-secret
-        
+              name: wordpress-secret 
         volumeMounts:
         - name: mariadb-persistent-storage
           mountPath: /var/lib/mysql
